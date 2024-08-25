@@ -49,6 +49,7 @@ const StarryBackground: React.FC = () => {
 
     // Smooth zoom back to the default camera position every few seconds
     setInterval(() => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       isZoomingBack = true;
     }, zoomResetInterval * 1000);
 

@@ -2,8 +2,8 @@
 
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { storeModelInIndexedDB, loadModelFromIndexedDB } from '@/utils/indexedDB';
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./ui/MagicButton";
