@@ -11,8 +11,10 @@ const About: NextPage = () => {
       <p className="text-lg mb-6">
         Hi, Im Tushar Pachouri, a software developer with a passion for creating dynamic and engaging web experiences. I specialize in technologies like Next.js, React, Node.js, and Python, and I love solving complex problems and building scalable applications.
       </p>
-      <Link href="/" className="flex items-center text-blue-600 hover:underline">
-        <FaArrowLeft className="mr-2" /> Back to Home
+      <Link href="/" legacyBehavior>
+        <a className="flex items-center text-blue-600 hover:underline">
+          <FaArrowLeft className="mr-2" /> Back to Home
+        </a>
       </Link>
     </div>
   );

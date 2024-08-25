@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
 
       const savedModelData = await loadModelFromIndexedDB();
       if (!savedModelData) {
-        gltfLoader.load('http://localhost:3000/astronaut.glb', async (gltf) => {
+        gltfLoader.load('https://portfolio-nextjs-black-six.vercel.app/astronaut.glb', async (gltf) => {
           const loadedModel = gltf.scene;
 
           // Add the loaded model to IndexedDB
