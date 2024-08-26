@@ -33,10 +33,10 @@ export const TextGenerateEffect = ({
     if (typedElementRef.current) {
       const options = {
         strings: [
-          "I Do Web Development",
-          "I Do Web Design",
-          "I Do UI/UX Design",
-          "I Do Software Development"
+          "I Do Web Development|",
+          "I Do Web Design|",
+          "I Do UI/UX Design|",
+          "I Do Software Development|"
         ],
         typeSpeed: 50,
         backSpeed: 25,

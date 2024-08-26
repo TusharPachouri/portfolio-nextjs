@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
-import StarryBackground from "../components/StarryBackground"; // Adjust the import path as needed
+import StarryBackground from "../components/ui/StarryBackground"; // Adjust the import path as needed
 
 const inter = Inter({ subsets: ["latin"] });
 

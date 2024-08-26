@@ -168,7 +168,10 @@ const Hero: React.FC = () => {
   return (
     <div className="flex">
       <div className="flex-1">
-        <canvas ref={canvasRef} style={{ width: '100%', height: '100%', background: 'transparent', overflow: 'visible', zIndex: '3', position: 'relative' }}></canvas>
+      <canvas
+          ref={canvasRef}
+          className="w-full h-full bg-transparent overflow-visible z-10 relative"
+        />     
       </div>
       <div className="flex-1">
         <div className="pb-20 pt-36">
