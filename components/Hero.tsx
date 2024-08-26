@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
 
       const savedModelData = await loadModelFromIndexedDB();
       if (!savedModelData) {
-        gltfLoader.load('https://portfolio-nextjs-black-six.vercel.app/astronaut.glb', async (gltf) => {
+        gltfLoader.load('https://localhost:3000/astronaut.glb', async (gltf) => {
           const loadedModel = gltf.scene;
 
           // Add the loaded model to IndexedDB
@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
     // Load and add model
     const loadAndAddModel = async () => {
       const gltfLoader = new GLTFLoader();
-      gltfLoader.load('http://localhost:3000/Astronaut2.glb', (gltf: { scene: any; }) => {
+      gltfLoader.load('/Astronaut2.glb', (gltf: { scene: any; }) => {  // Use a relative path
         const model = gltf.scene;
 
         // Add the model to the scene
