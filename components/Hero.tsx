@@ -13,6 +13,7 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  // const typedElementRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const initializeThreeJS = async () => {
@@ -139,7 +140,6 @@ const Hero: React.FC = () => {
       animate();
     };
 
-
     // Controls
     const orbitControls = new OrbitControls(camera, webGLRenderer.domElement);
     orbitControls.enableDamping = true;
@@ -163,6 +163,7 @@ const Hero: React.FC = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
 
   return (
     <div className="flex">
@@ -188,36 +189,23 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="flex items-end justify-start relative my-20 z-10 px-4">
-              <div className="max-w-[100vw] md:max-w-2xl lg:max-w-[66vw] flex flex-col items-start text-left">
-                {/* <p className="uppercase tracking-widest text-xs text-blue-100 mb-2">
-                  Dynamic Web Magic with Next.js
-                </p> */}
-                <TextGenerateEffect
-                  words="Hi! I’m Tushar Pachouri"
-                  className="text-center text-[40px] md:text-3xl lg:text-4xl "
+            <div className="max-w-[100vw] md:max-w-2xl lg:max-w-[66vw] flex flex-col items-start text-left">
+              <TextGenerateEffect
+                words="Hi! I'm Tushar Pachouri"
+                className="text-center text-[40px] md:text-3xl lg:text-4xl mb-4"
+              />
+              <p className="text-left mb-4 text-sm md:text-sm lg:text-base">
+                I work with clients to turn their ideas into impactful digital solutions. Combining strategy with creativity, I craft engaging experiences that enhance user interaction and strengthen brand identity.
+              </p>
+              <a href="/about">
+                <MagicButton
+                  title="Show my work"
+                  icon={<FaLocationArrow />}
+                  position="right"
                 />
-                <TextGenerateEffect
-                  words="A Software Developer."
-                  className="text-center text-[40px] md:text-3xl lg:text-4xl "
-                />
-                {/* <p className="text-left md:tracking-wider mb-6 text-sm md:text-lg lg:text-2xl">
-                  Hi! I’m Tushar Pachouri, a Software Developer.
-                </p> */}
-                <p className="text-left mb-4 text-sm md:text-sm lg:text-base">
-                I work with clients to turn their ideas into impactful digital solutions. Combining strategy with creativity, I craft engaging experiences that enhance user interaction and strengthen brand identity.    </p>
-                {/* <p className="text-left text-sm md:text-sm lg:text-base">
-                  My team is small enough to enjoy the smaller accomplishments, yet agile enough to take on projects of all sizes.
-                </p> */}
-                <a href="#about">
-                  <MagicButton
-                    title="Show my work"
-                    icon={<FaLocationArrow />}
-                    position="right"
-                  />
-                </a>
-              </div>
-            </div>  
-
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
