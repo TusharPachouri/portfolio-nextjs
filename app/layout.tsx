@@ -5,6 +5,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import StarryBackground from "../components/ui/StarryBackground"; // Adjust the import path as needed
+import { FloatingNav } from "@/components/ui/FloatingNavbar";
+import { FaBlog, FaBriefcase, FaEnvelope, FaFileAlt, FaHome, FaUser } from "react-icons/fa";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +24,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <StarryBackground />
+        <FloatingNav navItems={[
+            { name: "HOME", link: "/", icon: <FaHome /> },
+            { name: "ABOUT", link: "/about", icon: <FaUser /> },
+            { name: "RESUME", link: "/resume", icon: <FaFileAlt /> },
+            { name: "PORTFOLIO", link: "/portfolio", icon: <FaBriefcase /> },
+            { name: "BLOG", link: "/blog", icon: <FaBlog /> },
+            { name: "CONTACT", link: "/contact", icon: <FaEnvelope /> }
+          ]} />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

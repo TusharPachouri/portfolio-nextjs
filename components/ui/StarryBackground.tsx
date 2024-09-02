@@ -26,7 +26,7 @@ const StarryBackground: React.FC = () => {
 
     // Create star field
     const starsGeometry = new THREE.BufferGeometry();
-    const starCount = 10000;
+    const starCount = 7000;
     const positions = new Float32Array(starCount * 3);
 
     for (let i = 0; i < starCount * 3; i++) {
@@ -59,7 +59,7 @@ const StarryBackground: React.FC = () => {
       delta = clock.getDelta();
 
       requestAnimationFrame(animate);
-      stars.rotation.y -= 0.0025;
+      stars.rotation.y -= 0.0015;
 
       // Smooth zoom back to the default camera position if isZoomingBack is true
       if (isZoomingBack) {
