@@ -9,10 +9,11 @@ import {
   storeModelInIndexedDB,
   loadModelFromIndexedDB,
 } from "@/utils/indexedDB";
-import { FaLocationArrow } from "react-icons/fa6";
+import { FaCode, FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./ui/MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import { FaBriefcase, FaPaintBrush, FaRocket } from "react-icons/fa";
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -227,19 +228,43 @@ const Hero: React.FC = () => {
                 words="Hi! I'm Tushar Pachouri"
                 className="text-center text-[40px] md:text-3xl lg:text-4xl mb-4"
               />
-              <p className="text-left mb-4 text-sm md:text-sm lg:text-base">
+              <p className="text-left text-white mb-4 text-sm md:text-sm lg:text-base">
                 I work with clients to turn their ideas into impactful digital
                 solutions. Combining strategy with creativity, I craft engaging
                 experiences that enhance user interaction and strengthen brand
                 identity.
               </p>
-              <a href="/about">
-                <MagicButton
-                  title="Show my work"
-                  icon={<FaLocationArrow />}
-                  position="right"
-                />
-              </a>
+
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="/contact" className="w-full sm:w-auto">
+                  <MagicButton
+                    title="Let's Collaborate"
+                    icon={<FaLocationArrow />}
+                    position="right"
+                    otherClasses="w-full sm:w-auto from-blue-500 to-purple-600 hover:from-blue hover:to-purple  duration-300"
+                  />
+                </a>
+                <a href="/portfolio">
+                  <MagicButton
+                    title="View Portfolio"
+                    icon={<FaLocationArrow />}
+                    position="right"
+                    otherClasses="w-full sm:w-auto from-blue-500 to-purple-600 hover:from-blue hover:to-purple  duration-300"
+                  />
+                </a>
+              </div>
+
+              <div className="mt-12 flex justify-center items-center space-x-6">
+                <div className="flex items-center text-gray-400 hover:text-purple  transition-colors">
+                  <FaCode className="mr-2" /> Web Development
+                </div>
+                <div className="flex items-center text-gray-400 hover:text-blue-400 transition-colors">
+                  <FaPaintBrush className="mr-2" /> UI/UX Design
+                </div>
+                <div className="flex items-center text-gray-400 hover:text-green-400 transition-colors">
+                  <FaRocket className="mr-2" /> Digital Strategy
+                </div>
+              </div>
             </div>
           </div>
         </div>

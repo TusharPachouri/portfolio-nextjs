@@ -22,8 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
         <StarryBackground />
+      <body className={inter.className}>
         <FloatingNav navItems={[
             { name: "HOME", link: "/", icon: <FaHome /> },
             { name: "ABOUT", link: "/about", icon: <FaUser /> },
