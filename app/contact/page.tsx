@@ -1,12 +1,5 @@
 "use client";
 import React, { useEffect } from "react";
-
-// Declare Razorpay on the window object
-declare global {
-  interface Window {
-    Razorpay: any;
-  }
-}
 import { FaRocket, FaPhone, FaEnvelope, FaCertificate } from "react-icons/fa";
 import { Spotlight } from "@/components/ui/Spotlight";
 import ContactForm from "@/components/ui/ContactForm"; // Assuming the contact form is in this path
