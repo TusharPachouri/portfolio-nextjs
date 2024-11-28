@@ -41,8 +41,8 @@ const Contact: React.FC = () => {
       },
     };
 
-    const rzp1 = new window.Razorpay(options);
-    rzp1.open();
+    // const rzp1 = new window.Razorpay(options);
+    // rzp1.open();
   };
 
   return (
