@@ -229,7 +229,10 @@ const Hero: React.FC = () => {
                 className="text-center text-[40px] md:text-3xl lg:text-4xl mb-4"
               />
               <p className="text-left text-white mb-4 text-sm md:text-sm lg:text-base">
-                
+                I work with clients to turn their ideas into impactful digital
+                solutions. Combining strategy with creativity, I craft engaging
+                experiences that enhance user interaction and strengthen brand
+                identity.
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
