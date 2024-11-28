@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 // import { resend } from '@/utils/Resend'; // Assuming you have Resend setup
 import ContactEmail from "@/emails/ContactEmail"; // Path to the email template
-import { ApiResponse } from "@/types/ApiResponse"; // Assuming ApiResponse is your response type
+// import { ApiResponse } from "@/types/ApiResponse"; // Assuming ApiResponse is your response type
 
 export async function POST(req: Request) {
   const { name, email, subject, message } = await req.json();
