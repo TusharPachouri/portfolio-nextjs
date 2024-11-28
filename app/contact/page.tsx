@@ -18,32 +18,32 @@ const Contact: React.FC = () => {
     };
   }, []);
 
-  const handlePayment = () => {
-    const options = {
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-      amount: "5000",
-      currency: "INR",
-      name: "Tushar Pachouri",
-      description: "Test Transaction",
-      image: "/path/to/your/logo.png",
-      order_id: "order_9A33XWu170gUtm",
-      callback_url: "https://yourwebsite.com/payment-callback",
-      prefill: {
-        name: "Tushar Pachouri",
-        email: "tusharpachouri@gmail.com",
-        contact: "9876543210",
-      },
-      notes: {
-        address: "Your Business Address",
-      },
-      theme: {
-        color: "#3399cc",
-      },
-    };
+  // const handlePayment = () => {
+  //   const options = {
+  //     key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+  //     amount: "5000",
+  //     currency: "INR",
+  //     name: "Tushar Pachouri",
+  //     description: "Test Transaction",
+  //     image: "/path/to/your/logo.png",
+  //     order_id: "order_9A33XWu170gUtm",
+  //     callback_url: "https://yourwebsite.com/payment-callback",
+  //     prefill: {
+  //       name: "Tushar Pachouri",
+  //       email: "tusharpachouri@gmail.com",
+  //       contact: "9876543210",
+  //     },
+  //     notes: {
+  //       address: "Your Business Address",
+  //     },
+  //     theme: {
+  //       color: "#3399cc",
+  //     },
+  //   };
 
-    // const rzp1 = new window.Razorpay(options);
-    // rzp1.open();
-  };
+  //   // const rzp1 = new window.Razorpay(options);
+  //   // rzp1.open();
+  // };
 
   return (
     <div className="relative bg-black-100 flex justify-center items-center min-h-screen mx-auto sm:px-10 px-5 py-36">
@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
             </p>
 
             <button
-              onClick={handlePayment}
+              // onClick={handlePayment}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105"
             >
               Pay Now
