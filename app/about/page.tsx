@@ -18,6 +18,20 @@ import {
 const About: NextPage = () => {
   return (
     <main className="relative bg-black-100  flex justify-center items-center min-h-screen mx-auto sm:px-10 px-5 py-36">
+      <div className="absolute inset-0 overflow-hidden">
+        <Spotlight
+          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+          fill="white"
+        />
+        <Spotlight
+          className="h-[40vh] w-[50vw] top-10 left-1/2 -translate-x-1/2"
+          fill="purple"
+        />
+        <Spotlight 
+          className="left-1/2 top-28 h-[80vh] w-[50vw] -translate-x-1/2" 
+          fill="blue" 
+        />
+      </div>
       <div className="w-full max-w-5xl">
         <div className="bg-gray-800/50  backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-8 ">

@@ -229,10 +229,7 @@ const Hero: React.FC = () => {
                 className="text-center text-[40px] md:text-3xl lg:text-4xl mb-4"
               />
               <p className="text-left text-white mb-4 text-sm md:text-sm lg:text-base">
-                I work with clients to turn their ideas into impactful digital
-                solutions. Combining strategy with creativity, I craft engaging
-                experiences that enhance user interaction and strengthen brand
-                identity.
+                
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -241,7 +238,7 @@ const Hero: React.FC = () => {
                     title="Let's Collaborate"
                     icon={<FaLocationArrow />}
                     position="right"
-                    otherClasses="w-full sm:w-auto from-blue-500 to-purple-600 hover:from-blue hover:to-purple  duration-300"
+                    // otherClasses="w-full sm:w-auto from-blue-500 to-purple-600 hover:from-blue hover:to-purple  duration-300"
                   />
                 </a>
                 <a href="/portfolio">
@@ -249,19 +246,19 @@ const Hero: React.FC = () => {
                     title="View Portfolio"
                     icon={<FaLocationArrow />}
                     position="right"
-                    otherClasses="w-full sm:w-auto from-blue-500 to-purple-600 hover:from-blue hover:to-purple  duration-300"
+                    // otherClasses="w-full sm:w-auto from-blue-500 to-purple-600 hover:from-blue hover:to-purple  duration-300"
                   />
                 </a>
               </div>
 
               <div className="mt-12 flex justify-center items-center space-x-6">
-                <div className="flex items-center text-gray-400 hover:text-purple  transition-colors">
+                <div className="flex items-center text-gray-400 hover:text-purple hover:font-bold  transition-colors">
                   <FaCode className="mr-2" /> Web Development
                 </div>
-                <div className="flex items-center text-gray-400 hover:text-blue-400 transition-colors">
+                <div className="flex items-center text-gray-400 hover:text-blue-400 hover:font-bold transition-colors">
                   <FaPaintBrush className="mr-2" /> UI/UX Design
                 </div>
-                <div className="flex items-center text-gray-400 hover:text-green-400 transition-colors">
+                <div className="flex items-center text-gray-400 hover:text-green-400 hover:font-bold transition-colors">
                   <FaRocket className="mr-2" /> Digital Strategy
                 </div>
               </div>
