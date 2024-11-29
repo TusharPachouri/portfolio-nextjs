@@ -6,17 +6,17 @@ import ContactForm from "@/components/ui/ContactForm"; // Assuming the contact f
 import ContactWithMap from "@/components/ui/ContactWithMap"; // Assuming the contact form is in this path
 
 const Contact: React.FC = () => {
-  useEffect(() => {
-    // Dynamically load Razorpay checkout script
-    const script = document.createElement("script");
-    script.src = "https://checkout.razorpay.com/v1/checkout.js";
-    script.async = true;
-    document.body.appendChild(script);
+  // useEffect(() => {
+  //   // Dynamically load Razorpay checkout script
+  //   const script = document.createElement("script");
+  //   script.src = "https://checkout.razorpay.com/v1/checkout.js";
+  //   script.async = true;
+  //   document.body.appendChild(script);
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  //   return () => {
+  //     document.body.removeChild(script);
+  //   };
+  // }, []);
 
   // const handlePayment = () => {
   //   const options = {
@@ -97,7 +97,6 @@ const Contact: React.FC = () => {
                 tusharpachouri001@gmail.com
               </a>
               <br />
-              
             </p>
           </div>
 
@@ -133,8 +132,8 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Include the ContactForm component */}
-        
-        <div className="p-6"> 
+
+        <div className="p-6">
           <ContactWithMap />
         </div>
       </div>
