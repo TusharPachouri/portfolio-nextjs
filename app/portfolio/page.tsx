@@ -1,7 +1,7 @@
 "use client";
 import MagicButton from "@/components/ui/MagicButton";
-import { Spotlight } from "@/components/ui/Spotlight";
-import { TextGenerateEffect } from "@/components/ui/TextGenerateEffect";
+import { Spotlight } from "@/components/ui/Effects/Spotlight";
+import { TextGenerateEffect } from "@/components/ui/Effects/TextGenerateEffect";
 import { NextPage } from "next";
 import {
   FaUser,
@@ -19,51 +19,76 @@ import { useState } from "react";
 
 const projects = [
   {
-    "title": "Nebula Blog",
-    "description": "Nebula Blog is an interactive platform for users to create, manage, and discover blog content, AI-powered content generation.",
-    "technologies": ["React", "Node.js", "MongoDB", "JWT", "Gemini AI", "Cloudinary"],
-    "githubLink": "https://github.com/TusharPachouri/blog-website",
-    "liveLink": "https://nebula-blog.tusharpachouri.com/",
-    "image": "/ProjectImages/NebulaBlog.jpg"
-  }
-  ,
+    title: "Nebula Blog",
+    description:
+      "Nebula Blog is an interactive platform for users to create, manage, and discover blog content, AI-powered content generation.",
+    technologies: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "JWT",
+      "Gemini AI",
+      "Cloudinary",
+    ],
+    githubLink: "https://github.com/TusharPachouri/blog-website",
+    liveLink: "https://nebula-blog.tusharpachouri.com/",
+    image: "/ProjectImages/NebulaBlog.jpg",
+  },
   {
-    "title": "3D Portfolio",
-    "description": "An interactive portfolio featuring 3D models and animations to showcase projects and skills dynamically.",
-    "technologies": ["Three.js", "Next.js", "React", "GLTF Models", "CSS Animations"],
-    "githubLink": "https://github.com/TusharPachouri/portfolio-nextjs",
-    "liveLink": "https://tusharpachouri.com/",
-    "image": "/ProjectImages/3DPortfolio.jpg"
-  }
-  ,
+    title: "3D Portfolio",
+    description:
+      "An interactive portfolio featuring 3D models and animations to showcase projects and skills dynamically.",
+    technologies: [
+      "Three.js",
+      "Next.js",
+      "React",
+      "GLTF Models",
+      "CSS Animations",
+    ],
+    githubLink: "https://github.com/TusharPachouri/portfolio-nextjs",
+    liveLink: "https://tusharpachouri.com/",
+    image: "/ProjectImages/3DPortfolio.jpg",
+  },
   {
-    "title": "Video Streaming Application",
-    "description": "A secure platform for video streaming where users can upload videos, customize profiles, and interact with content.",
-    "technologies": ["Node.js", "MongoDB", "JWT", "bcrypt", "Cloudinary", "RESTful APIs"],
-    "githubLink": "https://github.com/TusharPachouri/Video-Streaming-Application",
-    "liveLink": "https://video-streaming-application.tusharpachouri.com/",
-    "image": "/ProjectImages/VideoStreaming.jpg"
-  }
-  ,
+    title: "Video Streaming Application",
+    description:
+      "A secure platform for video streaming where users can upload videos, customize profiles, and interact with content.",
+    technologies: [
+      "Node.js",
+      "MongoDB",
+      "JWT",
+      "bcrypt",
+      "Cloudinary",
+      "RESTful APIs",
+    ],
+    githubLink: "https://github.com/TusharPachouri/Video-Streaming-Application",
+    liveLink: "https://video-streaming-application.tusharpachouri.com/",
+    image: "/ProjectImages/VideoStreaming.jpg",
+  },
   {
-    "title": "DropDash",
-    "description": "A secure file-sharing platform that lets users upload, share, and manage files with enhanced security and scalability.",
-    "technologies": ["Flask", "Azure Blob Storage", "Azure Table Storage", "Azure CDN"],
-    "githubLink": "https://github.com/TusharPachouri/DropDash",
-    "liveLink": "https://dropdash.vercel.app/",
-    "image": "/ProjectImages/DropDash.jpg"
-  }
-  
-  ,
+    title: "DropDash",
+    description:
+      "A secure file-sharing platform that lets users upload, share, and manage files with enhanced security and scalability.",
+    technologies: [
+      "Flask",
+      "Azure Blob Storage",
+      "Azure Table Storage",
+      "Azure CDN",
+    ],
+    githubLink: "https://github.com/TusharPachouri/DropDash",
+    liveLink: "https://dropdash.vercel.app/",
+    image: "/ProjectImages/DropDash.jpg",
+  },
+
   {
-    "title": "RhythmReaper",
-    "description": "A Python app that fetches top tracks from Spotify and downloads them in MP3 format using Pytube, simplifying music library management.",
-    "technologies": ["Python", "Spotify API", "Pytube"],
-    "githubLink": "https://github.com/TusharPachouri/RhythmReaper",
-    "liveLink": "#",
-    "image": "/ProjectImages/RhythmReaper2.jpg"
-  }
-  ,
+    title: "RhythmReaper",
+    description:
+      "A Python app that fetches top tracks from Spotify and downloads them in MP3 format using Pytube, simplifying music library management.",
+    technologies: ["Python", "Spotify API", "Pytube"],
+    githubLink: "https://github.com/TusharPachouri/RhythmReaper",
+    liveLink: "#",
+    image: "/ProjectImages/RhythmReaper2.jpg",
+  },
 ];
 
 interface Project {
@@ -151,9 +176,9 @@ const Portfolio: NextPage = () => {
           className="h-[40vh] w-[50vw] top-10 left-1/2 -translate-x-1/2"
           fill="purple"
         />
-        <Spotlight 
-          className="left-1/2 top-28 h-[80vh] w-[50vw] -translate-x-1/2" 
-          fill="blue" 
+        <Spotlight
+          className="left-1/2 top-28 h-[80vh] w-[50vw] -translate-x-1/2"
+          fill="blue"
         />
       </div>
 

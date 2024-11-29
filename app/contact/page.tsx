@@ -1,9 +1,17 @@
 "use client";
 import React, { useEffect } from "react";
-import { FaRocket, FaPhone, FaEnvelope, FaCertificate, FaCreditCard, FaMoneyBillWave, FaShoppingCart } from "react-icons/fa";
-import { Spotlight } from "@/components/ui/Spotlight";
-import ContactForm from "@/components/ui/ContactForm"; // Assuming the contact form is in this path
-import ContactWithMap from "@/components/ui/ContactWithMap"; // Assuming the contact form is in this path
+import {
+  FaRocket,
+  FaPhone,
+  FaEnvelope,
+  FaCertificate,
+  FaCreditCard,
+  FaMoneyBillWave,
+  FaShoppingCart,
+} from "react-icons/fa";
+import { Spotlight } from "@/components/ui/Effects/Spotlight";
+import ContactForm from "@/components/ui/ForContact/ContactForm"; // Assuming the contact form is in this path
+import ContactWithMap from "@/components/ui/ForContact/ContactWithMap"; // Assuming the contact form is in this path
 import PaymentPage from "@/components/ui/PaymentPage"; // Assuming the RazorpayButton component is in this path
 
 const Contact: React.FC = () => {
@@ -72,7 +80,6 @@ const Contact: React.FC = () => {
               {/* <FaMoneyBillWave />
               <FaShoppingCart /> */}
               {/* <RiMoneyDollarCircleLine /> */}
-              
             </div>
             <h5 className="text-xl font-bold uppercase mb-4">Online Payment</h5>
             <p className="text-gray-300 mb-4">

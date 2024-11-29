@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import ContactForm from "./ContactForm";
-import MapSection from "./MapSection";
+import MapSection from "../Map/MapSection";
 
 const ContactWithMap: React.FC = () => {
   return (

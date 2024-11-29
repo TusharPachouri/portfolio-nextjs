@@ -11,7 +11,7 @@ import {
   FaLaptopCode,
   FaCertificate,
 } from "react-icons/fa";
-import { Spotlight } from "@/components/ui/Spotlight";
+import { Spotlight } from "@/components/ui/Effects/Spotlight";
 
 interface AnimatedSkillBarProps {
   skill: string;
@@ -168,7 +168,7 @@ const Resume: React.FC = () => {
           <div className="bg-gray-900/60 rounded-lg p-6 relative overflow-hidden">
             {/* Line Texture */}
             {/* <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div> */}
-            
+
             <h2 className="text-2xl uppercase font-bold text-white mb-6 border-b border-gray-700 pb-3 flex items-center pl-4">
               <FaGraduationCap className="mr-3 text-blue-400" /> Education
             </h2>
@@ -204,7 +204,9 @@ const Resume: React.FC = () => {
                   Kendriya Vidyalaya Mathura Cantt
                 </h3>
                 <p className="text-gray-300">SSC (Class 10th) | 2017 - 2018</p>
-                <p className="text-gray-400 text-sm">CBSE Board with 8.4 CGPA</p>
+                <p className="text-gray-400 text-sm">
+                  CBSE Board with 8.4 CGPA
+                </p>
               </div>
             </div>
           </div>
@@ -221,7 +223,9 @@ const Resume: React.FC = () => {
                 <h3 className="text-xl font-semibold text-white">
                   Tata Consultancy Services
                 </h3>
-                <p className="text-gray-300">System Engineer | August 2024 - present</p>
+                <p className="text-gray-300">
+                  System Engineer | August 2024 - present
+                </p>
                 <ul className="list-disc pl-8 text-gray-400 text-sm">
                   <li>Built, updated, and maintained websites</li>
                   <li>Collaborated on features to enhance user experience</li>

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
-import StarryBackground from "../components/ui/StarryBackground"; // Adjust the import path as needed
+import StarryBackground from "../components/ui/Effects/StarryBackground"; // Adjust the import path as needed
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import { FaBlog, FaBriefcase, FaEnvelope, FaFileAlt, FaHome, FaUser } from "react-icons/fa";
 

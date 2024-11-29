@@ -11,8 +11,8 @@ import {
 } from "@/utils/indexedDB";
 import { FaCode, FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./ui/MagicButton";
-import { Spotlight } from "./ui/Spotlight";
-import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import { Spotlight } from "./ui/Effects/Spotlight";
+import { TextGenerateEffect } from "./ui/Effects/TextGenerateEffect";
 import { FaBriefcase, FaPaintBrush, FaRocket } from "react-icons/fa";
 
 const Hero: React.FC = () => {
