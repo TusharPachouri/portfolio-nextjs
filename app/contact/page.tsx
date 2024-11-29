@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
 
       {/* Main content with higher z-index */}
       <div className="max-w-7xl mx-auto relative z-10">
-        <h1 className="text-4xl font-bold text-center mb-12 text-white">
+        <h1 className="text-5xl font-bold text-center mb-8 text-white">
           CONTACT ME
         </h1>
 

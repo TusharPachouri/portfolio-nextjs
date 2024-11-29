@@ -19,50 +19,51 @@ import { useState } from "react";
 
 const projects = [
   {
-    title: "AI Chatbot Platform",
-    description:
-      "A full-stack AI chatbot solution with advanced natural language processing capabilities.",
-    technologies: ["React", "Node.js", "OpenAI API", "MongoDB"],
-    githubLink: "#",
-    liveLink: "#",
-    image: "/projects.png",
-  },
+    "title": "Nebula Blog",
+    "description": "Nebula Blog is an interactive platform for users to create, manage, and discover blog content, AI-powered content generation.",
+    "technologies": ["React", "Node.js", "MongoDB", "JWT", "Gemini AI", "Cloudinary"],
+    "githubLink": "https://github.com/TusharPachouri/blog-website",
+    "liveLink": "https://nebula-blog.tusharpachouri.com/",
+    "image": "/ProjectImages/NebulaBlog.jpg"
+  }
+  ,
   {
-    title: "E-Commerce Dashboard",
-    description:
-      "Comprehensive analytics and management platform for online retailers.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Chart.js"],
-    githubLink: "#",
-    liveLink: "#",
-    image: "/api/placeholder/600/400",
-  },
+    "title": "3D Portfolio",
+    "description": "An interactive portfolio featuring 3D models and animations to showcase projects and skills dynamically.",
+    "technologies": ["Three.js", "Next.js", "React", "GLTF Models", "CSS Animations"],
+    "githubLink": "https://github.com/TusharPachouri/portfolio-nextjs",
+    "liveLink": "https://tusharpachouri.com/",
+    "image": "/ProjectImages/3DPortfolio.jpg"
+  }
+  ,
   {
-    title: "Social Media Analytics Tool",
-    description:
-      "Real-time social media performance tracking and insights generator.",
-    technologies: ["React", "Python", "Django", "PostgreSQL"],
-    githubLink: "#",
-    liveLink: "#",
-    image: "/api/placeholder/600/400",
-  },
+    "title": "Video Streaming Application",
+    "description": "A secure platform for video streaming where users can upload videos, customize profiles, and interact with content.",
+    "technologies": ["Node.js", "MongoDB", "JWT", "bcrypt", "Cloudinary", "RESTful APIs"],
+    "githubLink": "https://github.com/TusharPachouri/Video-Streaming-Application",
+    "liveLink": "https://video-streaming-application.tusharpachouri.com/",
+    "image": "/ProjectImages/VideoStreaming.jpg"
+  }
+  ,
   {
-    title: "Social Media Analytics Tool",
-    description:
-      "Real-time social media performance tracking and insights generator.",
-    technologies: ["React", "Python", "Django", "PostgreSQL"],
-    githubLink: "#",
-    liveLink: "#",
-    image: "/api/placeholder/600/400",
-  },
+    "title": "DropDash",
+    "description": "A secure file-sharing platform that lets users upload, share, and manage files with enhanced security and scalability.",
+    "technologies": ["Flask", "Azure Blob Storage", "Azure Table Storage", "Azure CDN"],
+    "githubLink": "https://github.com/TusharPachouri/DropDash",
+    "liveLink": "https://dropdash.vercel.app/",
+    "image": "/ProjectImages/DropDash.jpg"
+  }
+  
+  ,
   {
-    title: "Social Media Analytics Tool",
-    description:
-      "Real-time social media performance tracking and insights generator.",
-    technologies: ["React", "Python", "Django", "PostgreSQL"],
-    githubLink: "#",
-    liveLink: "#",
-    image: "/api/placeholder/600/400",
-  },
+    "title": "RhythmReaper",
+    "description": "A Python app that fetches top tracks from Spotify and downloads them in MP3 format using Pytube, simplifying music library management.",
+    "technologies": ["Python", "Spotify API", "Pytube"],
+    "githubLink": "https://github.com/TusharPachouri/RhythmReaper",
+    "liveLink": "#",
+    "image": "/ProjectImages/RhythmReaper2.jpg"
+  }
+  ,
 ];
 
 interface Project {
@@ -160,8 +161,8 @@ const Portfolio: NextPage = () => {
       <div className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Projects Section */}
         <div className="mt-32">
-          <h2 className="text-4xl font-bold text-center mb-8 text-white">
-            My Projects
+          <h2 className="text-5xl font-bold text-center mb-8 text-white">
+            MY PORTFOLIO
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
