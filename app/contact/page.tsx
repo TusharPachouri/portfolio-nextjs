@@ -10,7 +10,7 @@ import {
   FaShoppingCart,
 } from "react-icons/fa";
 import { Spotlight } from "@/components/ui/Effects/Spotlight";
-import ContactForm from "@/components/ui/ForContact/ContactForm"; // Assuming the contact form is in this path
+import ContactForm from "@/components/ui/ContactForm"; // Assuming the contact form is in this path
 import ContactWithMap from "@/components/ui/ForContact/ContactWithMap"; // Assuming the contact form is in this path
 import PaymentPage from "@/components/ui/PaymentPage"; // Assuming the RazorpayButton component is in this path
 
