@@ -1,7 +1,7 @@
 "use client";
 import MagicButton from "@/components/ui/MagicButton";
 import { Spotlight } from "@/components/ui/Effects/Spotlight";
-import { TextGenerateEffect } from "@/components/ui/Effects/TextGenerateEffect";
+import { TextGenerateEffect } from "@/components/ui/TextGenerateEffect";
 import { NextPage } from "next";
 import {
   FaUser,

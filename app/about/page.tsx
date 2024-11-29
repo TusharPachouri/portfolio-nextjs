@@ -1,6 +1,6 @@
 import MagicButton from "@/components/ui/MagicButton";
 import { Spotlight } from "@/components/ui/Effects/Spotlight";
-import { TextGenerateEffect } from "@/components/ui/Effects/TextGenerateEffect";
+import { TextGenerateEffect } from "@/components/ui/TextGenerateEffect";
 import { NextPage } from "next";
 import {
   FaUser,
@@ -119,7 +119,7 @@ const About: NextPage = () => {
                     </div>
                   </div>
                   <div className="flex items-center">
-                  <FaPhone className="mr-3 text-blue-400" />
+                    <FaPhone className="mr-3 text-blue-400" />
                     <div>
                       <span className="font-bold text-blue-400 text-sm block">
                         Phone

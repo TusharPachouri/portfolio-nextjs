@@ -1,7 +1,7 @@
 "use client";
 import MagicButton from "@/components/ui/MagicButton";
 import { Spotlight } from "@/components/ui/Effects/Spotlight";
-import { TextGenerateEffect } from "@/components/ui/Effects/TextGenerateEffect";
+import { TextGenerateEffect } from "@/components/ui/TextGenerateEffect";
 import { NextPage } from "next";
 import {
   FaUser,
@@ -22,20 +22,22 @@ const blogPosts = [
     id: 1,
     title: "My Journey into Web Development",
     date: "November 15, 2024",
-    excerpt: "Reflecting on the challenges and triumphs of becoming a full-stack developer...",
+    excerpt:
+      "Reflecting on the challenges and triumphs of becoming a full-stack developer...",
     readTime: "5 min read",
     imageUrl: "/Blogs/blog01.jpg",
-    tags: ["Web Development", "Career", "Personal Growth"]
+    tags: ["Web Development", "Career", "Personal Growth"],
   },
   {
     id: 2,
     title: "Building Responsive Design: Tips and Tricks",
     date: "October 22, 2024",
-    excerpt: "Practical strategies for creating seamless user experiences across devices...",
+    excerpt:
+      "Practical strategies for creating seamless user experiences across devices...",
     readTime: "7 min read",
     imageUrl: "/Blogs/blog02.jpg",
-    tags: ["UI/UX", "Frontend", "Design Principles"]
-  }
+    tags: ["UI/UX", "Frontend", "Design Principles"],
+  },
 ];
 
 const Blog: NextPage = () => {
@@ -58,7 +60,7 @@ const Blog: NextPage = () => {
           fill="gray"
         />
       </div>
-      
+
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 pt-32 py-16">
         <div className="grid md:grid-cols-2 gap-8">
@@ -66,16 +68,18 @@ const Blog: NextPage = () => {
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-white mb-6">My Blog</h1>
             {blogPosts.map((post) => (
-              <div 
-                key={post.id} 
+              <div
+                key={post.id}
                 className={`p-6 rounded-lg cursor-pointer transition-all duration-300 ${
-                  activePost.id === post.id 
-                    ? 'bg-white/10 border border-white/20' 
-                    : 'hover:bg-white/5'
+                  activePost.id === post.id
+                    ? "bg-white/10 border border-white/20"
+                    : "hover:bg-white/5"
                 }`}
                 onClick={() => setActivePost(post)}
               >
-                <h2 className="text-2xl font-semibold text-white mb-2">{post.title}</h2>
+                <h2 className="text-2xl font-semibold text-white mb-2">
+                  {post.title}
+                </h2>
                 <div className="flex items-center text-gray-400 mb-2">
                   <span className="mr-4">{post.date}</span>
                   <span>{post.readTime}</span>
@@ -83,8 +87,8 @@ const Blog: NextPage = () => {
                 <p className="text-gray-300">{post.excerpt}</p>
                 <div className="mt-2 flex space-x-2">
                   {post.tags.map((tag) => (
-                    <span 
-                      key={tag} 
+                    <span
+                      key={tag}
                       className="px-2 py-1 bg-white/10 rounded-full text-xs text-white"
                     >
                       {tag}
@@ -97,21 +101,23 @@ const Blog: NextPage = () => {
 
           {/* Active Blog Post Details */}
           <div className="bg-white/10 rounded-lg p-8 border border-white/20">
-            <img 
-              src={activePost.imageUrl} 
-              alt={activePost.title} 
+            <img
+              src={activePost.imageUrl}
+              alt={activePost.title}
               className="w-full h-64 object-cover rounded-lg mb-6"
             />
-            <h1 className="text-3xl font-bold text-white mb-4">{activePost.title}</h1>
+            <h1 className="text-3xl font-bold text-white mb-4">
+              {activePost.title}
+            </h1>
             <div className="flex items-center text-gray-400 mb-4">
               <span className="mr-4">{activePost.date}</span>
               <span>{activePost.readTime}</span>
             </div>
             <p className="text-gray-300 mb-6">
-              {activePost.excerpt} 
+              {activePost.excerpt}
               {/* You would typically have full content here */}
             </p>
-            <MagicButton 
+            <MagicButton
               title="Read Full Article"
               icon={<FaCloudDownloadAlt />}
               position="center"
