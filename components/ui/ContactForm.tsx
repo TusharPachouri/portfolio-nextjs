@@ -98,11 +98,11 @@ const ContactForm: React.FC = () => {
 
   return (
     <div className="bg-gray-900/60 p-6 rounded-lg max-w-lg mx-auto">
-      <h2 className="text-3xl text-center text-white mb-6">Get In Touch</h2>
+      <h2 className="text-3xl text-center text-white uppercase font-bold mb-6">Get In Touch</h2>
       <form onSubmit={handleSubmit}>
         {/* Name Field */}
         <div className="mb-4">
-          <label htmlFor="name" className="text-white text-lg">
+          <label htmlFor="name" className="text-white uppercase text-lg font-bold">
             Name
           </label>
           <input
@@ -123,7 +123,7 @@ const ContactForm: React.FC = () => {
 
         {/* Email Field */}
         <div className="mb-4">
-          <label htmlFor="email" className="text-white text-lg">
+          <label htmlFor="email" className="text-white uppercase text-lg font-bold">
             Email
           </label>
           <input
@@ -144,7 +144,7 @@ const ContactForm: React.FC = () => {
 
         {/* Subject Field */}
         <div className="mb-4">
-          <label htmlFor="subject" className="text-white text-lg">
+          <label htmlFor="subject" className="text-white uppercase text-lg font-bold">
             Subject
           </label>
           <input
@@ -165,7 +165,7 @@ const ContactForm: React.FC = () => {
 
         {/* Message Field */}
         <div className="mb-4">
-          <label htmlFor="message" className="text-white text-lg">
+          <label htmlFor="message" className="text-white uppercase text-lg font-bold">
             Message
           </label>
           <textarea
@@ -200,7 +200,7 @@ const ContactForm: React.FC = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-lg font-bold uppercase text-white py-3 rounded-lg"
           disabled={isSubmitting}
         >
           {isSubmitting ? "Sending..." : "Send Message"}
@@ -214,17 +214,17 @@ const ContactForm: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaLinkedin className="text-white text-2xl hover:text-blue-500 transition-colors duration-300" />
+          <FaLinkedin className="text-white text-4xl hover:text-blue-500 transition-colors duration-300" />
         </a>
         <a
           href="https://www.instagram.com/tushar_pachouri/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaInstagram className="text-white text-2xl hover:text-pink-500 transition-colors duration-300" />
+          <FaInstagram className="text-white text-4xl hover:text-pink-500 transition-colors duration-300" />
         </a>
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <FaTwitter className="text-white text-2xl hover:text-blue-400 transition-colors duration-300" />
+          <FaTwitter className="text-white text-4xl hover:text-blue-400 transition-colors duration-300" />
         </a>
       </div>
     </div>

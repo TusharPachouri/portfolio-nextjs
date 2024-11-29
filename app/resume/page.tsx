@@ -26,7 +26,7 @@ const AnimatedSkillBar: React.FC<AnimatedSkillBarProps> = ({
 }) => {
   return (
     <div className="mb-4">
-      <div className="flex justify-between text-gray-300 mb-2">
+      <div className="flex uppercase justify-between text-gray-300 mb-2">
         <span className="font-medium">{skill}</span>
         <span>{percentage}%</span>
       </div>
@@ -58,7 +58,7 @@ const Resume: React.FC = () => {
         {/* Download Resume Button - Top of the Page */}
         <div className="flex justify-center">
           <Link href="/TusharPachouri_back_end_New.pdf">
-            <div className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 flex items-center">
+            <div className="bg-gradient-to-r uppercase from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 flex items-center">
               Download My Resume
               <FaCloudDownloadAlt className="ml-2" />
             </div>
@@ -69,7 +69,7 @@ const Resume: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Coding Skills */}
           <div className="bg-gray-900/60 rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-3">
+            <h2 className="text-2xl uppercase font-bold text-white mb-6 border-b border-gray-700 pb-3">
               Coding Skills
             </h2>
             <AnimatedSkillBar
@@ -97,7 +97,7 @@ const Resume: React.FC = () => {
 
           {/* Language Skills */}
           <div className="bg-gray-900/60 rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-3">
+            <h2 className="text-2xl uppercase font-bold text-white mb-6 border-b border-gray-700 pb-3">
               Language Skills
             </h2>
             <AnimatedSkillBar
@@ -117,7 +117,7 @@ const Resume: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Professional Skills */}
           <div className="bg-gray-900/60 rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-3 flex items-center">
+            <h2 className="text-2xl font-bold uppercase text-white mb-6 border-b border-gray-700 pb-3 flex items-center">
               <FaCertificate className="mr-3 text-blue-400" /> Professional
               Skills
             </h2>
@@ -147,10 +147,10 @@ const Resume: React.FC = () => {
 
           {/* Basic Knowledge */}
           <div className="bg-gray-900/60 rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-3 flex items-center">
+            <h2 className="text-2xl uppercase font-bold text-white mb-6 border-b border-gray-700 pb-3 flex items-center">
               <FaLaptopCode className="mr-3 text-blue-400" /> Basic Knowledge
             </h2>
-            <ul className="text-gray-300 space-y-2 list-disc pl-5">
+            <ul className="text-gray-300 uppercase space-y-2 list-disc pl-5">
               <li>Presentation Software (PowerPoint, Keynote)</li>
               <li>Search Engine Marketing</li>
               <li>Mobile App Development (iOS & Android)</li>
@@ -169,14 +169,14 @@ const Resume: React.FC = () => {
             {/* Line Texture */}
             {/* <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div> */}
             
-            <h2 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-3 flex items-center pl-4">
+            <h2 className="text-2xl uppercase font-bold text-white mb-6 border-b border-gray-700 pb-3 flex items-center pl-4">
               <FaGraduationCap className="mr-3 text-blue-400" /> Education
             </h2>
             <div className="space-y-4 pl-4">
               {/* Lovely Professional University */}
               <div className="relative pl-5">
                 <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl uppercase font-semibold text-white">
                   Lovely Professional University
                 </h3>
                 <p className="text-gray-300">B.Tech CSE | 2020 - 2024</p>
@@ -189,7 +189,7 @@ const Resume: React.FC = () => {
               {/* Kendriya Vidyalaya */}
               <div className="relative pl-5">
                 <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl uppercase font-semibold text-white">
                   Kendriya Vidyalaya Mathura Cantt
                 </h3>
                 <p className="text-gray-300">HSC (Class 12th) | 2019 - 2020</p>
@@ -200,7 +200,7 @@ const Resume: React.FC = () => {
 
               <div className="relative pl-5">
                 <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl uppercase font-semibold text-white">
                   Kendriya Vidyalaya Mathura Cantt
                 </h3>
                 <p className="text-gray-300">SSC (Class 10th) | 2017 - 2018</p>
@@ -211,17 +211,17 @@ const Resume: React.FC = () => {
 
           {/* Experience Section */}
           <div className="bg-gray-900/60 rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-3 flex items-center">
+            <h2 className="text-2xl uppercase font-bold text-white mb-6 border-b border-gray-700 pb-3 flex items-center">
               <FaBriefcase className="mr-3 text-blue-400" /> Experience
             </h2>
             <div className="space-y-4 pl-4">
               {/* Web Development Intern */}
               <div className="relative pl-5">
-                <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
+                <div className="absolute uppercase top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
                 <h3 className="text-xl font-semibold text-white">
                   Tata Consultancy Services
                 </h3>
-                <p className="text-gray-300">August 2024 - present</p>
+                <p className="text-gray-300">System Engineer | August 2024 - present</p>
                 <ul className="list-disc pl-8 text-gray-400 text-sm">
                   <li>Built, updated, and maintained websites</li>
                   <li>Collaborated on features to enhance user experience</li>
@@ -232,7 +232,7 @@ const Resume: React.FC = () => {
               {/* Full Stack Developer (Freelance) */}
               <div className="relative pl-5">
                 <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl uppercase font-semibold text-white">
                   Full Stack Developer (Freelance)
                 </h3>
                 <p className="text-gray-300">February 2022 - Present</p>

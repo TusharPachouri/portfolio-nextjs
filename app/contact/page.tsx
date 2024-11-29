@@ -4,47 +4,9 @@ import { FaRocket, FaPhone, FaEnvelope, FaCertificate } from "react-icons/fa";
 import { Spotlight } from "@/components/ui/Spotlight";
 import ContactForm from "@/components/ui/ContactForm"; // Assuming the contact form is in this path
 import ContactWithMap from "@/components/ui/ContactWithMap"; // Assuming the contact form is in this path
+import PaymentPage from "@/components/ui/PaymentPage"; // Assuming the RazorpayButton component is in this path
 
 const Contact: React.FC = () => {
-  // useEffect(() => {
-  //   // Dynamically load Razorpay checkout script
-  //   const script = document.createElement("script");
-  //   script.src = "https://checkout.razorpay.com/v1/checkout.js";
-  //   script.async = true;
-  //   document.body.appendChild(script);
-
-  //   return () => {
-  //     document.body.removeChild(script);
-  //   };
-  // }, []);
-
-  // const handlePayment = () => {
-  //   const options = {
-  //     key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-  //     amount: "5000",
-  //     currency: "INR",
-  //     name: "Tushar Pachouri",
-  //     description: "Test Transaction",
-  //     image: "/path/to/your/logo.png",
-  //     order_id: "order_9A33XWu170gUtm",
-  //     callback_url: "https://yourwebsite.com/payment-callback",
-  //     prefill: {
-  //       name: "Tushar Pachouri",
-  //       email: "tusharpachouri@gmail.com",
-  //       contact: "9876543210",
-  //     },
-  //     notes: {
-  //       address: "Your Business Address",
-  //     },
-  //     theme: {
-  //       color: "#3399cc",
-  //     },
-  //   };
-
-  //   // const rzp1 = new window.Razorpay(options);
-  //   // rzp1.open();
-  // };
-
   return (
     <div className="relative bg-black-100 flex justify-center items-center min-h-screen mx-auto sm:px-10 px-5 py-36">
       {/* Spotlight component with z-index set to 0 */}
@@ -63,7 +25,7 @@ const Contact: React.FC = () => {
 
       {/* Main content with higher z-index */}
       <div className="max-w-7xl mx-auto relative z-10">
-        <h1 className="text-5xl font-bold text-center mb-8 text-white">
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 text-white">
           CONTACT ME
         </h1>
 
@@ -73,7 +35,7 @@ const Contact: React.FC = () => {
             <div className="text-blue-500 text-5xl mb-4">
               <FaRocket />
             </div>
-            <h5 className="text-xl font-bold mb-8">My Location:</h5>
+            <h5 className="text-xl uppercase font-bold mb-8">My Location:</h5>
             <p className="text-gray-300">
               9a/632, Murshadpur, Sadar Bazar, Mathura, 281001, Uttar Pradesh,
               India
@@ -86,7 +48,9 @@ const Contact: React.FC = () => {
               <FaPhone />
               <FaEnvelope />
             </div>
-            <h5 className="text-xl font-bold mb-8">Phone and Email:</h5>
+            <h5 className="text-xl font-bold uppercase mb-8">
+              Phone and Email
+            </h5>
             <p className="text-gray-300">
               +91-821-850-4473
               <br />
@@ -105,7 +69,7 @@ const Contact: React.FC = () => {
             <div className="text-purple-500 text-5xl mb-4">
               <FaCertificate />
             </div>
-            <h5 className="text-xl font-bold mb-4">Online Payment</h5>
+            <h5 className="text-xl font-bold uppercase mb-4">Online Payment</h5>
             <p className="text-gray-300 mb-4">
               UPI - tusharpachouri@oksbi
               <br />
@@ -118,13 +82,13 @@ const Contact: React.FC = () => {
                 PayPal - @tusharpachouri
               </a>
             </p>
-
-            <button
+            <PaymentPage />
+            {/* <button
               // onClick={handlePayment}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105"
             >
               Pay Now
-            </button>
+            </button> */}
             <p className="text-xs text-gray-400 text-center mt-2">
               *Secured by Razorpay*
             </p>

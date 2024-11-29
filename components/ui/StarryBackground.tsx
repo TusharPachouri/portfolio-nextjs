@@ -25,7 +25,7 @@ const StarryBackground: React.FC = () => {
 
     // Create star field
     const starsGeometry = new THREE.BufferGeometry();
-    const starCount = 15000;
+    const starCount = 25000;
     const positions = new Float32Array(starCount * 3);
     const colors = new Float32Array(starCount * 3);
     const sizes = new Float32Array(starCount);
