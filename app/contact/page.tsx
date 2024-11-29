@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { FaRocket, FaPhone, FaEnvelope, FaCertificate } from "react-icons/fa";
+import { FaRocket, FaPhone, FaEnvelope, FaCertificate, FaCreditCard, FaMoneyBillWave, FaShoppingCart } from "react-icons/fa";
 import { Spotlight } from "@/components/ui/Spotlight";
 import ContactForm from "@/components/ui/ContactForm"; // Assuming the contact form is in this path
 import ContactWithMap from "@/components/ui/ContactWithMap"; // Assuming the contact form is in this path
@@ -67,7 +67,12 @@ const Contact: React.FC = () => {
           {/* Online Payment Info */}
           <div className="bg-gray-900/60 rounded-lg p-6 flex flex-col items-center text-center ">
             <div className="text-purple-500 text-5xl mb-4">
-              <FaCertificate />
+              {/* <FaCertificate /> */}
+              <FaCreditCard />
+              {/* <FaMoneyBillWave />
+              <FaShoppingCart /> */}
+              {/* <RiMoneyDollarCircleLine /> */}
+              
             </div>
             <h5 className="text-xl font-bold uppercase mb-4">Online Payment</h5>
             <p className="text-gray-300 mb-4">
