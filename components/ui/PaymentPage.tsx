@@ -64,7 +64,7 @@ const PaymentPage = () => {
             }`}
         >
           {isProcessing ? "Processing..." : "Pay Now"}
-        </button>
+        </button> 
       </div>
     // </div>
   );
