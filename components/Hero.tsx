@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
       const savedModelData = await loadModelFromIndexedDB();
       if (!savedModelData) {
         gltfLoader.load(
-          "https://localhost:3000/astronaut.glb",
+          "https://localhost:3000/3dModels/astronaut.glb",
           async (gltf) => {
             const loadedModel = gltf.scene;
 
@@ -87,7 +87,7 @@ const Hero: React.FC = () => {
     const loadAndAddModel = async () => {
       const gltfLoader = new GLTFLoader();
       gltfLoader.load(
-        "/dyson_sphere.glb",
+        "/3dModels/dyson_sphere.glb",
         (gltf: { scene: any; animations: any[] }) => {
           // Use a relative path
           const model = gltf.scene;
