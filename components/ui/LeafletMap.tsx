@@ -38,10 +38,15 @@ const LeafletMap: React.FC = () => {
     const marker = L.marker([27.4924, 77.6737])
       .addTo(map)
       .bindPopup(`
-        <div style="text-align: center;">
-          <h3>Mathura, India</h3>
-          <p>Ancient city of cultural and religious significance</p>
+        <div style="text-align: center; background-color: #f7f7f7; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); max-width: 400px; margin: 0 auto;">
+            <h3 style="font-family: 'Arial', sans-serif; font-size: 18px; color: #2d3a3a; margin-bottom: 10px;">
+                Mathura, India
+            </h3>
+            <p style="font-family: 'Verdana', sans-serif; font-size: 14px; color: #555; line-height: 1.6; margin-top: 0;">
+                Feel free to reach out! I'm always open to new opportunities and collaborations. :)
+            </p>
         </div>
+
       `)
       .openPopup();
 

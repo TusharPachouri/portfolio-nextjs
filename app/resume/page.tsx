@@ -65,7 +65,7 @@ const Resume: React.FC = () => {
           </Link>
         </div>
 
-        {/* Coding Skills and Language Skills */}
+        {/* Existing Coding and Language Skills Sections */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Coding Skills */}
           <div className="bg-gray-900/60 rounded-lg p-6">
@@ -162,83 +162,87 @@ const Resume: React.FC = () => {
           </div>
         </div>
 
-        {/* Education Section */}
-        <div className="bg-gray-900/60 rounded-lg p-6">
-          <h2 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-3 flex items-center">
-            <FaGraduationCap className="mr-3 text-blue-400" /> Education
-          </h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-xl font-semibold text-white">
-                Lovely Professional University
-              </h3>
-              <p className="text-gray-300">B.Tech CSE | 2020 - 2024</p>
-              <p className="text-gray-400 text-sm">
-                Bachelor Degree in Computer Science Engineering with
-                Specialization in Web Development
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-white">
-                Kendriya Vidyalaya Mathura Cantt
-              </h3>
-              <p className="text-gray-300">HSC (Class 12th) | 2019 - 2020</p>
-              <p className="text-gray-400 text-sm">
-                CBSE Board with 74.2% in PCM + Computer Science Stream
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-white">
-                Kendriya Vidyalaya Mathura Cantt
-              </h3>
-              <p className="text-gray-300">SSC (Class 10th) | 2017 - 2018</p>
-              <p className="text-gray-400 text-sm">CBSE Board with 8.4 CGPA</p>
+        {/* Education and Experience Side by Side */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Education Section with Line Texture */}
+          <div className="bg-gray-900/60 rounded-lg p-6 relative overflow-hidden">
+            {/* Line Texture */}
+            {/* <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div> */}
+            
+            <h2 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-3 flex items-center pl-4">
+              <FaGraduationCap className="mr-3 text-blue-400" /> Education
+            </h2>
+            <div className="space-y-4 pl-4">
+              {/* Lovely Professional University */}
+              <div className="relative pl-5">
+                <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
+                <h3 className="text-xl font-semibold text-white">
+                  Lovely Professional University
+                </h3>
+                <p className="text-gray-300">B.Tech CSE | 2020 - 2024</p>
+                <p className="text-gray-400 text-sm">
+                  Bachelor Degree in Computer Science Engineering with
+                  Specialization in Web Development
+                </p>
+              </div>
+
+              {/* Kendriya Vidyalaya */}
+              <div className="relative pl-5">
+                <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
+                <h3 className="text-xl font-semibold text-white">
+                  Kendriya Vidyalaya Mathura Cantt
+                </h3>
+                <p className="text-gray-300">HSC (Class 12th) | 2019 - 2020</p>
+                <p className="text-gray-400 text-sm">
+                  CBSE Board with 74.2% in PCM + Computer Science Stream
+                </p>
+              </div>
+
+              <div className="relative pl-5">
+                <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
+                <h3 className="text-xl font-semibold text-white">
+                  Kendriya Vidyalaya Mathura Cantt
+                </h3>
+                <p className="text-gray-300">SSC (Class 10th) | 2017 - 2018</p>
+                <p className="text-gray-400 text-sm">CBSE Board with 8.4 CGPA</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Experience Section */}
-        <div className="bg-gray-900/60 rounded-lg p-6">
-          <h2 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-3 flex items-center">
-            <FaBriefcase className="mr-3 text-blue-400" /> Experience
-          </h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-xl font-semibold text-white">
-                Freelance Web Developer
-              </h3>
-              <p className="text-gray-300">
-                Web Development | SEO | 2022 - Present
-              </p>
-              <p className="text-gray-400 text-sm">
-                Transforming client visions into expertly crafted strategic and
-                visual solutions, creating thoughtful experiences and propelling
-                brands with soul and substance.
-              </p>
+          {/* Experience Section */}
+          <div className="bg-gray-900/60 rounded-lg p-6">
+            <h2 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-3 flex items-center">
+              <FaBriefcase className="mr-3 text-blue-400" /> Experience
+            </h2>
+            <div className="space-y-4 pl-4">
+              {/* Web Development Intern */}
+              <div className="relative pl-5">
+                <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
+                <h3 className="text-xl font-semibold text-white">
+                  Tata Consultancy Services
+                </h3>
+                <p className="text-gray-300">August 2024 - present</p>
+                <ul className="list-disc pl-8 text-gray-400 text-sm">
+                  <li>Built, updated, and maintained websites</li>
+                  <li>Collaborated on features to enhance user experience</li>
+                  <li>Developed UI components using React</li>
+                </ul>
+              </div>
+
+              {/* Full Stack Developer (Freelance) */}
+              <div className="relative pl-5">
+                <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
+                <h3 className="text-xl font-semibold text-white">
+                  Full Stack Developer (Freelance)
+                </h3>
+                <p className="text-gray-300">February 2022 - Present</p>
+                <ul className="list-disc pl-8 text-gray-400 text-sm">
+                  <li>Developed full stack applications with Node.js</li>
+                  <li>Implemented JWT authentication for secure logins</li>
+                  <li>Designed RESTful APIs for client applications</li>
+                </ul>
+              </div>
             </div>
-            {/* <div>
-              <h3 className="text-xl font-semibold text-white">
-                Co-Founder and Lead @ Net Impact
-              </h3>
-              <p className="text-gray-300">
-                Lovely Professional University - Undergrad Chapter | 2018 - 2021
-              </p>
-              <p className="text-gray-400 text-sm">
-                Leveraged a student community of over 30,000 to innovate and
-                empower women in India for an inclusive future.
-              </p>
-            </div> */}
-            {/* <div>
-              <h3 className="text-xl font-semibold text-white">
-                Design Lead @ Hult Prize Foundation
-              </h3>
-              <p className="text-gray-300">LPU Chapter | 2018 - 2019</p>
-              <p className="text-gray-400 text-sm">
-                Participated in an international community of changemakers
-                committed to empowering social entrepreneurs to solve global
-                challenges.
-              </p>
-            </div> */}
           </div>
         </div>
       </div>
@@ -247,15 +251,3 @@ const Resume: React.FC = () => {
 };
 
 export default Resume;
-
-// Wave animation styles
-const additionalStyles = `
-@keyframes wave {
-  0%, 100% { transform: translateX(-100%); }
-  50% { transform: translateX(0); }
-}
-
-.animate-wave {
-  animation: wave linear infinite;
-}
-`;
