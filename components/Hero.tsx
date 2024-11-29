@@ -154,13 +154,13 @@ const Hero: React.FC = () => {
         model.position.lerp(initialPosition, 0.001);
 
         // Log the model's position in real-time
-        console.log(
-          `Model position: x=${model.position.x.toFixed(
-            2
-          )}, y=${model.position.y.toFixed(2)}, z=${model.position.z.toFixed(
-            2
-          )}`
-        );
+        // console.log(
+        //   `Model position: x=${model.position.x.toFixed(
+        //     2
+        //   )}, y=${model.position.y.toFixed(2)}, z=${model.position.z.toFixed(
+        //     2
+        //   )}`
+        // );
 
         orbitControls.update();
         webGLRenderer.render(scene, camera);
