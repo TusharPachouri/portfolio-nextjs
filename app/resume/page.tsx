@@ -51,13 +51,23 @@ const Resume: React.FC = () => {
           className="-top-40 -left-10 md:-top-20 h-screen md:-left-20 max-md:left-0 max-md:top-20"
           fill="white"
         />
-        <Spotlight className="h-[40vh] w-[50vw] top-10 left-80 sl:-left-20 max-md:left-0 max-md:top-40" fill="purple" />
-        <Spotlight className="left-80 top-28 h-[80vh] w-[50vw] md:-left-20 max-md:left-0 max-md:top-40" fill="blue" />
+        <Spotlight
+          className="h-[40vh] w-[50vw] top-10 left-80 sl:-left-20 max-md:left-0 max-md:top-40"
+          fill="purple"
+        />
+        <Spotlight
+          className="left-80 top-28 h-[80vh] w-[50vw] md:-left-20 max-md:left-0 max-md:top-40"
+          fill="blue"
+        />
       </div>
       <div className="w-full max-w-6xl relative z-10 space-y-4">
         {/* Download Resume Button - Top of the Page */}
         <div className="flex justify-center">
-          <Link href="/TusharPachouri_back_end_New.pdf">
+          <Link
+            href="/TusharPachouri_back_end_New.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="bg-gradient-to-r uppercase from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 flex items-center">
               Download My Resume
               <FaCloudDownloadAlt className="ml-2" />
