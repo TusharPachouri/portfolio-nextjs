@@ -48,11 +48,11 @@ const Resume: React.FC = () => {
     <main className="relative bg-black-100 flex justify-center items-center min-h-screen mx-auto sm:px-10 px-5 py-32">
       <div>
         <Spotlight
-          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+          className="-top-40 -left-10 md:-top-20 h-screen md:-left-20 max-md:left-0 max-md:top-20"
           fill="white"
         />
-        <Spotlight className="h-[40vh] w-[50vw] top-10 left-80" fill="purple" />
-        <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
+        <Spotlight className="h-[40vh] w-[50vw] top-10 left-80 sl:-left-20 max-md:left-0 max-md:top-40" fill="purple" />
+        <Spotlight className="left-80 top-28 h-[80vh] w-[50vw] md:-left-20 max-md:left-0 max-md:top-40" fill="blue" />
       </div>
       <div className="w-full max-w-6xl relative z-10 space-y-4">
         {/* Download Resume Button - Top of the Page */}

@@ -222,46 +222,46 @@ const Hero: React.FC = () => {
             <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
           </div>
 
-          <div className="flex items-end justify-start relative my-20 z-10 px-4">
-            <div className="max-w-[100vw] md:max-w-2xl lg:max-w-[66vw] flex flex-col items-start text-left">
+          <div className="flex items-end justify-start relative my-10 md:my-20 z-10 px-4">
+            <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-[66vw] flex flex-col items-start text-left">
               <TextGenerateEffect
                 words="Hi! I'm Tushar Pachouri"
-                className="text-center text-[40px] md:text-3xl lg:text-4xl mb-4"
+                className="text-center uppercase text-3xl md:text-xl lg:text-4xl xl:text-4xl mb-4 w-full"
               />
-              <p className="text-left text-white mb-4 text-sm md:text-sm lg:text-base">
+              <p className="text-left text-white mb-4 text-sm md:text-sm lg:text-base xl:text-base leading-relaxed">
                 I work with clients to turn their ideas into impactful digital
                 solutions. Combining strategy with creativity, I craft engaging
                 experiences that enhance user interaction and strengthen brand
                 identity.
               </p>
 
-              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <div className="flex flex-col sm:flex-row justify-center md:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
                 <a href="/contact" className="w-full sm:w-auto">
                   <MagicButton
                     title="Let's Collaborate"
                     icon={<FaLocationArrow />}
                     position="right"
-                    // otherClasses="w-full sm:w-auto from-blue-500 to-purple-600 hover:from-blue hover:to-purple  duration-300"
+                    // otherClasses="w-full sm:w-auto"
                   />
                 </a>
-                <a href="/portfolio">
+                <a href="/portfolio" className="w-full sm:w-auto">
                   <MagicButton
                     title="View Portfolio"
                     icon={<FaLocationArrow />}
                     position="right"
-                    // otherClasses="w-full sm:w-auto from-blue-500 to-purple-600 hover:from-blue hover:to-purple  duration-300"
+                    // otherClasses="w-full sm:w-auto"
                   />
                 </a>
               </div>
 
-              <div className="mt-12 flex justify-center items-center space-x-6">
-                <div className="flex items-center text-gray-400 hover:text-purple hover:font-bold  transition-colors">
+              <div className="flex flex-wrap justify-center md:justify-start items-center space-x-2 sm:space-x-6 w-full">
+                <div className="flex items-center text-xs md:text-sm text-gray-400 hover:text-purple hover:font-bold transition-colors mb-2 md:mb-0">
                   <FaCode className="mr-2" /> Web Development
                 </div>
-                <div className="flex items-center text-gray-400 hover:text-blue-400 hover:font-bold transition-colors">
+                <div className="flex items-center text-xs md:text-sm text-gray-400 hover:text-blue-400 hover:font-bold transition-colors mb-2 md:mb-0">
                   <FaPaintBrush className="mr-2" /> UI/UX Design
                 </div>
-                <div className="flex items-center text-gray-400 hover:text-green-400 hover:font-bold transition-colors">
+                <div className="flex items-center text-xs md:text-sm text-gray-400 hover:text-green-400 hover:font-bold transition-colors">
                   <FaRocket className="mr-2" /> Digital Strategy
                 </div>
               </div>

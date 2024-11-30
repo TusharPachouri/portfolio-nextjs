@@ -149,7 +149,7 @@ const projects = [
   },
   {
     id: 5,
-    title: "RhythmReaper",
+    title: "Rhythm Reaper",
     date: "August 2024",
     description: "A Python app that fetches top tracks from Spotify and downloads them in MP3 format using Pytube, simplifying music library management.",
     technologies: ["Python", "Spotify API", "Pytube"],
@@ -215,7 +215,7 @@ const Portfolio: NextPage = () => {
       
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-6xl pt-32 mx-auto px-4 py-16">
-        <h1 className="text-5xl text-center font-bold text-center text-white mb-12">
+        <h1 className="text-5xl text-center font-bold uppercase text-white mb-12">
           My Projects
         </h1>
         <div className="grid text-center md:grid-cols-3 gap-8">
@@ -233,9 +233,9 @@ const Portfolio: NextPage = () => {
 
               {/* Content Overlay */}
               <div className="relative z-10 p-6 bg-black/40 hover:bg-black/50 transition-all duration-300">
-                <h2 className="text-2xl font-semibold text-white mb-2">{project.title}</h2>
+                <h2 className="text-2xl uppercase font-semibold text-white mb-2">{project.title}</h2>
                 <div className="flex items-center text-right text-gray-300 mb-2">
-                  <span className="mr-4">{project.date}</span>
+                  {/* <span className="flex items-center">{project.date}</span> */}
                 </div>
                 <p className="text-gray-200 mb-4">{project.description}</p>
                 
@@ -244,7 +244,7 @@ const Portfolio: NextPage = () => {
                   {project.technologies.map((tech) => (
                     <span 
                       key={tech} 
-                      className="px-2 py-1 bg-white/20 rounded-full text-xs text-white mb-1"
+                      className="px-2 py-1 bg-gray-800 items-center rounded-full text-xs text-white mb-1"
                     >
                       {tech}
                     </span>
@@ -285,7 +285,7 @@ const Portfolio: NextPage = () => {
               alt={activeProject.title} 
               className="w-full h-64 object-cover rounded-lg mb-6"
             />
-            <h1 className="text-4xl font-bold text-white mb-4">{activeProject.title}</h1>
+            <h1 className="text-4xl font-bold uppercase text-white mb-4">{activeProject.title}</h1>
             <div className="flex items-center text-gray-400 mb-6">
               <span className="mr-4">{activeProject.date}</span>
             </div>

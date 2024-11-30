@@ -6,7 +6,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/utils/cn";
-import { Menu, X } from "lucide-react"; // Using Lucide icons for menu toggle
+import { Menu, X } from "lucide-react";
 
 export const FloatingNav = ({
   navItems,
@@ -22,20 +22,44 @@ export const FloatingNav = ({
   const [visible, setVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Check for mobile device
+  // Scroll detection and visibility management
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Hide nav when scrolling down, show when scrolling up or at top
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setVisible(false);
+        // Close mobile menu when scrolling
+        setIsMobileMenuOpen(false);
+      } else {
+        setVisible(true);
+      }
+
+      // Update last scroll position
+      setLastScrollY(currentScrollY);
+    };
+
+    // Check for mobile device
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    checkMobile();
+    // Add event listeners
+    window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', checkMobile);
 
+    // Initial check
+    checkMobile();
+
+    // Cleanup
     return () => {
+      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', checkMobile);
     };
-  }, []);
+  }, [lastScrollY]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);

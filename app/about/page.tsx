@@ -37,7 +37,7 @@ const About: NextPage = () => {
           <div className="grid md:grid-cols-2 gap-8 ">
             {/* Personal Information Section */}
             <div className="bg-gray-900/60 rounded-lg p-6 space-y-6">
-              <h2 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-3">
+              <h2 className="text-2xl font-bold uppercase text-white mb-6 border-b border-gray-700 pb-3">
                 Personal Information
               </h2>
               <div className="space-y-4">
@@ -169,7 +169,7 @@ const About: NextPage = () => {
 
             {/* Achievements Section */}
             <div className="bg-gray-900/60 rounded-lg p-6">
-              <h2 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-3">
+              <h2 className="text-2xl uppercase font-bold text-white mb-6 border-b border-gray-700 pb-3">
                 Achievements
               </h2>
               <div className="grid grid-cols-2 gap-4">

@@ -70,10 +70,12 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-bold", className)}>
       <div className="my-1">
-        <div className="dark:text-white text-black leading-snug tracking-wide text-left mb-2">
-          {renderWords()}
+        <div className="dark:text-white uppercase text-black leading-snug tracking-wide text-left mb-2">
+          <div className="text-2xl sm:text-3xl md:text-xl lg:text-5xl xl:text-4xl">
+            {renderWords()}
+          </div>
         </div>
-        <div className="dark:text-white text-left text-black leading-snug tracking-wide text-[40px] md:text-xl lg:text-2xl mb-2">
+        <div className="dark:text-white text-left text-black leading-snug tracking-wide text-xl sm:text-2xl md:text-base lg:text-2xl xl:text-2xl mb-2">
           <span ref={typedElementRef}></span>
         </div>
       </div>

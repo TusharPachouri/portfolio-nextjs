@@ -203,7 +203,7 @@ const Blog: NextPage = () => {
 
               {/* Content Overlay */}
               <div className="relative z-10 p-6 bg-black/40 hover:bg-black/50 transition-all duration-300">
-                <h2 className="text-2xl font-semibold text-white mb-2">{post.title}</h2>
+                <h2 className="text-2xl font-semibold uppercase text-white mb-2">{post.title}</h2>
                 <div className="flex items-center text-gray-300 mb-2">
                   <span className="mr-4">{post.date}</span>
                   <span>{post.readTime}</span>
@@ -215,7 +215,7 @@ const Blog: NextPage = () => {
                   {post.tags.map((tag) => (
                     <span 
                       key={tag} 
-                      className="px-2 py-1 bg-white/20 rounded-full text-xs text-white"
+                      className="px-2 py-1 bg-gray-800 rounded-full text-xs text-white"
                     >
                       {tag}
                     </span>
@@ -256,7 +256,7 @@ const Blog: NextPage = () => {
               alt={activePost.title} 
               className="w-full h-64 object-cover rounded-lg mb-6"
             />
-            <h1 className="text-4xl font-bold text-white mb-4">{activePost.title}</h1>
+            <h1 className="text-4xl font-bold uppercase text-white mb-4">{activePost.title}</h1>
             <div className="flex items-center text-gray-400 mb-6">
               <span className="mr-4">{activePost.date}</span>
               <span>{activePost.readTime}</span>
