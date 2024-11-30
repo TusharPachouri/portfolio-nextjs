@@ -4,12 +4,12 @@ import React, { useEffect } from 'react';
 const ChatwootWidget: React.FC = () => {
   useEffect(() => {
     // Add Chatwoot Settings
-    (window as any).chatwootSettings = {
-      hideMessageBubble: false,
-      position: 'right', // This can be left or right
-      locale: 'en', // Language to be set
-      type: 'standard', // [standard, expanded_bubble]
-    };
+    // (window as any).chatwootSettings = {
+    //   hideMessageBubble: false,
+    //   position: 'right', // This can be left or right
+    //   locale: 'en', // Language to be set
+    //   type: 'standard', // [standard, expanded_bubble]
+    // };
 
     // Paste the script from inbox settings except the <script> tag
     (function (d: Document, t: string) {
@@ -22,7 +22,7 @@ const ChatwootWidget: React.FC = () => {
       s.parentNode?.insertBefore(g, s);
       g.onload = () => {
         (window as any).chatwootSDK.run({
-          websiteToken: process.env.NEXT_PUBLIC_CHATWOOTWIDGET_TOKEN ,
+          websiteToken: 'vk26qCgq3vxb59YZt6hgJMwN' ,
           baseUrl: BASE_URL,
         });
       };
