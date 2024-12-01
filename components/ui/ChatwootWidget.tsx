@@ -22,13 +22,12 @@ const ChatwootWidget: React.FC = () => {
       s.parentNode?.insertBefore(g, s);
       g.onload = () => {
         (window as any).chatwootSDK.run({
-          websiteToken: 'vk26qCgq3vxb59YZt6hgJMwN' ,
+          websiteToken: 'YrtMnzfKxwwSpWLRRjY7fFHz' ,
           baseUrl: BASE_URL,
         });
       };
     })(document, "script");
   }, []);
-
   return null;
 };
 
