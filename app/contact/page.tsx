@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
       {/* Main content with higher z-index */}
       <div className="max-w-7xl mx-auto relative z-10">
         <h1 className="text-5xl text-center font-bold uppercase text-white mb-12">
-          My Blogs
+          contact me
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
