@@ -188,6 +188,9 @@ const Blog: NextPage = () => {
       
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-6xl pt-32 mx-auto px-4 py-16">
+      <h1 className="text-5xl text-center font-bold uppercase text-white mb-12">
+          My Blogs
+        </h1>
         <div className="grid md:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
             <div 

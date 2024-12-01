@@ -5,49 +5,19 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { AnimationMixer } from "three";
-import {
-  storeModelInIndexedDB,
-  loadModelFromIndexedDB,
-} from "@/utils/indexedDB";
-import { FaCode, FaLocationArrow } from "react-icons/fa6";
-import MagicButton from "./ui/MagicButton";
 import { Spotlight } from "./ui/Effects/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import { FaBriefcase, FaPaintBrush, FaRocket } from "react-icons/fa";
+import MagicButton from "./ui/MagicButton";
+import { FaCode, FaLocationArrow, FaPaintBrush, FaRocket } from "react-icons/fa";
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  // const typedElementRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const initializeThreeJS = async () => {
-      const gltfLoader = new GLTFLoader();
-
-      const savedModelData = await loadModelFromIndexedDB();
-      if (!savedModelData) {
-        gltfLoader.load(
-          "https://localhost:3000/3dModels/astronaut.glb",
-          async (gltf) => {
-            const loadedModel = gltf.scene;
-
-            // Add the loaded model to IndexedDB
-            await storeModelInIndexedDB(loadedModel.toJSON());
-            console.log("Model stored in IndexedDB");
-          },
-          undefined,
-          (error: any) => {
-            console.error("Error loading model:", error);
-          }
-        );
-      } else {
-        console.log("Model loaded from IndexedDB:", savedModelData);
-      }
-    };
-
     const canvasElement = canvasRef.current;
     if (!canvasElement) return;
 
-    // Set up Three.js
+    // Set up Three.js Scene, Camera, and Renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -55,48 +25,29 @@ const Hero: React.FC = () => {
       0.1,
       1000
     );
-    const webGLRenderer = new THREE.WebGLRenderer({
+    const renderer = new THREE.WebGLRenderer({
       canvas: canvasElement,
-      alpha: true,
+      alpha: true, // Enables transparent background
     });
-    webGLRenderer.setSize(window.innerWidth / 2, window.innerHeight);
-    webGLRenderer.setPixelRatio(window.devicePixelRatio); // Higher resolution for HD graphics
+    renderer.setSize(window.innerWidth / 2, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
 
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light with reduced intensity
-    scene.add(ambientLight);
-
+    // Add Lighting
+    scene.add(new THREE.AmbientLight(0xffffff, 0.5)); // Soft white light
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(5, 5, 5).normalize();
     scene.add(directionalLight);
 
-    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
-    pointLight.position.set(0, 10, 10);
-    scene.add(pointLight);
-
-    const frontSpotLight = new THREE.SpotLight(0xffffff, 1.2);
-    frontSpotLight.position.set(0, 5, 5); // Positioned directly in front of the model
-    frontSpotLight.angle = Math.PI / 6;
-    frontSpotLight.penumbra = 0.5;
-    frontSpotLight.decay = 2;
-    frontSpotLight.distance = 50;
-    frontSpotLight.castShadow = true;
-    scene.add(frontSpotLight);
-
-    // Load and add model
-    const loadAndAddModel = async () => {
-      const gltfLoader = new GLTFLoader();
-      gltfLoader.load(
+    // Load 3D Model
+    const loadModel = async () => {
+      const loader = new GLTFLoader();
+      loader.load(
         "/3dModels/dyson_sphere.glb",
-        (gltf: { scene: any; animations: any[] }) => {
-          // Use a relative path
+        (gltf) => {
           const model = gltf.scene;
-          const animations = gltf.animations;
+          const mixer = new AnimationMixer(model);
 
-          // Ensure the model scale is uniform to maintain the spherical shape
-          model.scale.set(1, 1, 1);
-
-          // Apply color to the model
+          model.scale.set(1, 1, 1); // Uniform scaling
           model.traverse((node: any) => {
             if (node.isMesh) {
               node.castShadow = true;
@@ -104,89 +55,62 @@ const Hero: React.FC = () => {
             }
           });
 
-          // Add the model to the scene
+          // Add model to the scene and animate it
           scene.add(model);
           camera.position.z = 3.5;
-
-          // Animation setup
-          const mixer = new AnimationMixer(model);
-          animations.forEach((clip) => mixer.clipAction(clip).play());
-
-          // Start animation
           animateModel(model, mixer);
         },
         undefined,
-        (error: any) => {
-          console.error("Error loading model:", error);
-        }
+        (error) => console.error("Error loading model:", error)
       );
     };
 
-    // Animation loop with model rotation on a fixed x-axis
-
-    const animateModel = (model: THREE.Scene, mixer: AnimationMixer) => {
+    // Animate Model: Rotation and Orbital Movement
+    const animateModel = (model: THREE.Group, mixer: AnimationMixer) => {
       const rotationSpeed = 0.005;
       const orbitSpeed = 0.01;
       const orbitRadius = 1.5;
       let time = 0;
-      const initialPosition = new THREE.Vector3(0, 0, 0);
 
       const animate = () => {
         requestAnimationFrame(animate);
-
-        // Update animations
         mixer.update(0.01);
 
-        // Rotate the model around its own axes
+        // Rotate model
         model.rotation.x += rotationSpeed;
         model.rotation.y += rotationSpeed;
-        model.rotation.z += rotationSpeed;
 
-        // Steady orbital movement
+        // Orbital movement
         time += orbitSpeed;
-        const x = Math.cos(time) * orbitRadius;
-        const y = Math.sin(time * 0.7) * orbitRadius * 0.5; // Smaller vertical movement
-        const z = Math.sin(time) * orbitRadius;
+        model.position.set(
+          Math.cos(time) * orbitRadius,
+          Math.sin(time * 0.7) * orbitRadius * 0.5,
+          Math.sin(time) * orbitRadius
+        );
 
-        model.position.set(x, y, z);
-
-        // Gradually return to initial position
-        model.position.lerp(initialPosition, 0.001);
-
-        // Log the model's position in real-time
-        // console.log(
-        //   `Model position: x=${model.position.x.toFixed(
-        //     2
-        //   )}, y=${model.position.y.toFixed(2)}, z=${model.position.z.toFixed(
-        //     2
-        //   )}`
-        // );
-
-        orbitControls.update();
-        webGLRenderer.render(scene, camera);
+        // Render the scene
+        controls.update();
+        renderer.render(scene, camera);
       };
 
       animate();
     };
 
-    // Controls
-    const orbitControls = new OrbitControls(camera, webGLRenderer.domElement);
-    orbitControls.enableDamping = true;
-    orbitControls.dampingFactor = 0.25;
-    orbitControls.enableZoom = true;
+    // Add Orbit Controls for Interaction
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.25;
 
-    // Handle window resize
+    // Handle Window Resize
     const handleResize = () => {
-      if (canvasElement) {
-        webGLRenderer.setSize(window.innerWidth / 2, window.innerHeight);
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-      }
+      renderer.setSize(window.innerWidth / 2, window.innerHeight);
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
     };
-
     window.addEventListener("resize", handleResize);
-    initializeThreeJS();
-    loadAndAddModel();
+
+    // Load Model
+    loadModel();
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -194,74 +118,52 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex">
+    <div className="relative flex">
+      {/* 3D Model Canvas */}
       <div className="flex-1">
         <canvas
           ref={canvasRef}
           className="w-full h-full bg-transparent overflow-visible z-10 relative"
         />
       </div>
+
+      {/* Hero Section Text */}
       <div className="flex-1">
         <div className="pb-20 pt-36">
+          {/* Visual Effects */}
           <div>
-            <Spotlight
-              className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
-              fill="white"
-            />
-            <Spotlight
-              className="h-[80vh] w-[50vw] top-10 left-full"
-              fill="purple"
-            />
-            <Spotlight
-              className="left-80 top-28 h-[80vh] w-[50vw]"
-              fill="blue"
-            />
+            <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen" fill="white" />
+            <Spotlight className="h-[80vh] w-[50vw] top-10 left-full" fill="purple" />
+            <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
           </div>
 
-          <div className="h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2] absolute top-0 left-0 flex items-center justify-center">
-            <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-          </div>
-
+          {/* Content Section */}
           <div className="flex items-end justify-start relative my-10 md:my-20 z-10 px-4">
-            <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-[66vw] flex flex-col items-start text-left">
+            <div className="w-full max-w-full sm:max-w-xl lg:max-w-[66vw] flex flex-col items-start text-left">
               <TextGenerateEffect
                 words="Hi! I'm Tushar Pachouri"
-                className="text-center uppercase text-3xl md:text-xl lg:text-4xl xl:text-4xl mb-4 w-full"
+                className="text-center uppercase text-3xl lg:text-4xl mb-4 w-full"
               />
-              <p className="text-left text-white mb-4 text-sm md:text-sm lg:text-base xl:text-base leading-relaxed">
-                I work with clients to turn their ideas into impactful digital
-                solutions. Combining strategy with creativity, I craft engaging
-                experiences that enhance user interaction and strengthen brand
-                identity.
+              <p className="text-left text-white mb-4 text-sm lg:text-base leading-relaxed">
+                I work with clients to turn ideas into impactful digital solutions. Combining
+                strategy and creativity, I craft engaging experiences that enhance user interaction.
               </p>
-
-              <div className="flex flex-col sm:flex-row justify-center md:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
-                <a href="/contact" className="w-full sm:w-auto">
-                  <MagicButton
-                    title="Let's Collaborate"
-                    icon={<FaLocationArrow />}
-                    position="right"
-                    // otherClasses="w-full sm:w-auto"
-                  />
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
+                <a href="/contact">
+                  <MagicButton title="Let's Collaborate" icon={<FaLocationArrow />} position="right" />
                 </a>
-                <a href="/portfolio" className="w-full sm:w-auto">
-                  <MagicButton
-                    title="View Portfolio"
-                    icon={<FaLocationArrow />}
-                    position="right"
-                    // otherClasses="w-full sm:w-auto"
-                  />
+                <a href="/portfolio">
+                  <MagicButton title="View Portfolio" icon={<FaLocationArrow />} position="right" />
                 </a>
               </div>
-
-              <div className="flex flex-wrap justify-center md:justify-start items-center space-x-2 sm:space-x-6 w-full">
-                <div className="flex items-center text-xs md:text-sm text-gray-400 hover:text-purple hover:font-bold transition-colors mb-2 md:mb-0">
+              <div className="flex flex-wrap space-x-2 sm:space-x-6">
+                <div className="flex items-center text-xs text-gray-400 hover:text-purple">
                   <FaCode className="mr-2" /> Web Development
                 </div>
-                <div className="flex items-center text-xs md:text-sm text-gray-400 hover:text-blue-400 hover:font-bold transition-colors mb-2 md:mb-0">
+                <div className="flex items-center text-xs text-gray-400 hover:text-blue-400">
                   <FaPaintBrush className="mr-2" /> UI/UX Design
                 </div>
-                <div className="flex items-center text-xs md:text-sm text-gray-400 hover:text-green-400 hover:font-bold transition-colors">
+                <div className="flex items-center text-xs text-gray-400 hover:text-green-400">
                   <FaRocket className="mr-2" /> Digital Strategy
                 </div>
               </div>
