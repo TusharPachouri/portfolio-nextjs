@@ -22,7 +22,7 @@ const ChatwootWidget: React.FC = () => {
       s.parentNode?.insertBefore(g, s);
       g.onload = () => {
         (window as any).chatwootSDK.run({
-          websiteToken: 'YrtMnzfKxwwSpWLRRjY7fFHz' ,
+          websiteToken: 'jd3fY7BcEJijB6JeaG9iukt4' ,
           baseUrl: BASE_URL,
         });
       };
