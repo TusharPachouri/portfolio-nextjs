@@ -33,6 +33,9 @@ const About: NextPage = () => {
         />
       </div>
       <div className="w-full max-w-5xl">
+        <h1 className="text-5xl text-center font-bold uppercase text-white mb-12">
+          About Me
+        </h1>
         <div className="bg-gray-800/50  backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-8 ">
             {/* Personal Information Section */}

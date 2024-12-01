@@ -61,6 +61,9 @@ const Resume: React.FC = () => {
         />
       </div>
       <div className="w-full max-w-6xl relative z-10 space-y-4">
+        <h1 className="text-5xl text-center font-bold uppercase text-white mb-12">
+          My Resume
+        </h1>
         {/* Download Resume Button - Top of the Page */}
         <div className="flex justify-center">
           <Link
