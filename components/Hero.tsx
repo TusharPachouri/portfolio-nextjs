@@ -5,9 +5,9 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { AnimationMixer } from "three";
-import { Spotlight } from "../../components/ui/Effects/Spotlight";
-import { TextGenerateEffect } from "../../components/ui/TextGenerateEffect";
-import MagicButton from "../../components/ui/MagicButton";
+import { Spotlight } from "./ui/Effects/Spotlight";
+import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import MagicButton from "./ui/MagicButton";
 import {
   FaCode,
   FaLocationArrow,
