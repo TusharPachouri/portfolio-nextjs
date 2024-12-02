@@ -107,7 +107,7 @@ export default function RootLayout({
       <StarryBackground />
       <body className={inter.className}>
         <FloatingNav navItems={[
-          { name: "HOME", link: "/home", icon: <FaHome /> },
+          { name: "HOME", link: "/", icon: <FaHome /> },
           { name: "ABOUT", link: "/about", icon: <FaUser /> },
           { name: "RESUME", link: "/resume", icon: <FaFileAlt /> },
           { name: "PORTFOLIO", link: "/portfolio", icon: <FaBriefcase /> },
