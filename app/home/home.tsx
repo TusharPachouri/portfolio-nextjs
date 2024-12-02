@@ -5,10 +5,15 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { AnimationMixer } from "three";
-import { Spotlight } from "./ui/Effects/Spotlight";
-import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import MagicButton from "./ui/MagicButton";
-import { FaCode, FaLocationArrow, FaPaintBrush, FaRocket } from "react-icons/fa";
+import { Spotlight } from "../../components/ui/Effects/Spotlight";
+import { TextGenerateEffect } from "../../components/ui/TextGenerateEffect";
+import MagicButton from "../../components/ui/MagicButton";
+import {
+  FaCode,
+  FaLocationArrow,
+  FaPaintBrush,
+  FaRocket,
+} from "react-icons/fa";
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -132,9 +137,18 @@ const Hero: React.FC = () => {
         <div className="pb-20 pt-36">
           {/* Visual Effects */}
           <div>
-            <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen" fill="white" />
-            <Spotlight className="h-[80vh] w-[50vw] top-10 left-full" fill="purple" />
-            <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
+            <Spotlight
+              className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+              fill="white"
+            />
+            <Spotlight
+              className="h-[80vh] w-[50vw] top-10 left-full"
+              fill="purple"
+            />
+            <Spotlight
+              className="left-80 top-28 h-[80vh] w-[50vw]"
+              fill="blue"
+            />
           </div>
 
           {/* Content Section */}
@@ -145,15 +159,24 @@ const Hero: React.FC = () => {
                 className="text-center uppercase text-3xl lg:text-4xl mb-4 w-full"
               />
               <p className="text-left text-white mb-4 text-sm lg:text-base leading-relaxed">
-                I work with clients to turn ideas into impactful digital solutions. Combining
-                strategy and creativity, I craft engaging experiences that enhance user interaction.
+                I work with clients to turn ideas into impactful digital
+                solutions. Combining strategy and creativity, I craft engaging
+                experiences that enhance user interaction.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
                 <a href="/contact">
-                  <MagicButton title="Let's Collaborate" icon={<FaLocationArrow />} position="right" />
+                  <MagicButton
+                    title="Let's Collaborate"
+                    icon={<FaLocationArrow />}
+                    position="right"
+                  />
                 </a>
                 <a href="/portfolio">
-                  <MagicButton title="View Portfolio" icon={<FaLocationArrow />} position="right" />
+                  <MagicButton
+                    title="View Portfolio"
+                    icon={<FaLocationArrow />}
+                    position="right"
+                  />
                 </a>
               </div>
               <div className="flex flex-wrap space-x-2 sm:space-x-6">

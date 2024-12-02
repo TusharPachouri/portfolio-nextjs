@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero";
+import Hero from "@/app/home/home";
 import About from "./about/page";
 import PortfolioLoader from "@/components/ui/PortfolioLoader";
 // import { FloatingNav } from "@/components/ui/FloatingNavbar";
