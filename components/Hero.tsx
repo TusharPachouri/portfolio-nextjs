@@ -13,7 +13,8 @@ import {
   FaLocationArrow,
   FaPaintBrush,
   FaRocket,
-} from "react-icons/fa";
+} from "react-icons/fa";  
+
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
