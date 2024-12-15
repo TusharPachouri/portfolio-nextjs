@@ -191,7 +191,7 @@ const Blog: NextPage = () => {
       <h1 className="text-5xl text-center font-bold uppercase text-white mb-12">
           My Blogs
         </h1>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid text-center md:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
             <div 
               key={post.id} 
@@ -241,7 +241,7 @@ const Blog: NextPage = () => {
       {/* Full Article Modal */}
       {isModalOpen && (
         <div 
-          className="fixed inset-0 bg-black/80 z-50 flex justify-center items-center p-4 overflow-y-auto"
+          className="fixed inset-0 bg-black/80 z-50 pt-36 flex justify-center items-center p-4 overflow-y-auto"
           onClick={() => setIsModalOpen(false)}
         >
           <div 
